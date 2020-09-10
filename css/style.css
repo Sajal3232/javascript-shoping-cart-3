@@ -1,3 +1,4 @@
+  
 @import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
 
 :root {
@@ -90,6 +91,7 @@ body {
   background: rgba(255, 255, 255, 0.5);
   width: 0;
   overflow: hidden;
+  z-index: 1;
 }
 .show-cart {
   width: 18rem;
