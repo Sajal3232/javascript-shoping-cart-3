@@ -35,7 +35,8 @@ const cartinfo=document.querySelector("#cart-info");
                 // console.log(finalPrice);
                 // item.price=finalPrice;
                 // console.log(item);
-    
+                item.price = finalPrice;
+
                 const cartItem=document.createElement("div");
                 cartItem.classList.add(
                     "cart-item", "d-flex", "justify-content-between", "text-capitalize", "my-3"
@@ -73,20 +74,19 @@ const cartinfo=document.querySelector("#cart-info");
         const total = new Array();
         const items=document.querySelectorAll(".cart-item-price");
         items.forEach(function(item){
-        total.push(parseInt(item.textContent));
+        total.push(parseFloat(item.textContent));
         });
-        console.log(total);
-    }
+            const totalMoney=total.reduce(function(total, item){
+            total+=item;
+            return total;
+         },0);
+          const finalMoney=totalMoney.toFixed(2);
+         
+          document.getElementById("cart-total").textContent=finalMoney;
+          document.querySelector(".item-total").textContent=finalMoney;
+          document.getElementById("item-count").textContent=total.length;
+    }   
 
-
-     
-        
-        // const totalMoney=total.reduce(function(total, item){
-        //    total+=item;
-        //    return total;
-        // },0);
-        // console.log(totalMoney);
-    // }
 })();
 
 
